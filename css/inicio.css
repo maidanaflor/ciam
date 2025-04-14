@@ -1,0 +1,414 @@
+.inicio-foto {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+.location-box {
+    width: 90%;
+    max-width: 500px;
+    min-height: 100px;
+    margin-top: -90px;
+    border: 3px solid white;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: white;
+    background-image: url('../pic/taller1.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.location-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 75, 160, 0.844); 
+    z-index: 0;
+}
+
+.location-row {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+    z-index: 1;
+    height: 100%;
+}
+
+.location-icon {
+    font-size: 30px;
+    color: white;
+}
+
+.location-text {
+    font-size: 16px;
+    font-weight: bold;
+    
+    position: center;
+    color: white;
+    margin-right: auto; 
+}
+
+.maps-button {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+    
+.maps-button:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+.inicio1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 2rem auto;
+    background-color: #0958d899;
+    color: var(--white);
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.columna1 {
+    padding: 1.5rem;
+}
+
+.inicio-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.inicio-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    height: 4px;
+    background-color: var(--secondary-color);
+}
+
+.inicio-title2 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.columna2 {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taller-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 2px;
+    border: 4px solid white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.inicio2 {
+    /*background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.844), 
+            rgba(248, 248, 249, 0.844)
+        ),
+        url('../pic/ciaminicio.jpeg') center/cover no-repeat;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.iniciologo {
+    width: 800px;
+    height: auto;
+    margin-bottom: 2rem;
+    object-fit: contain;
+}
+
+.inicio-title2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8; 
+    max-width: 800px;
+    letter-spacing: 0.3px; 
+}
+.inicio-text {
+    font-size: 15px;
+    color: #555; 
+    margin-bottom: 1.5rem; 
+    line-height: 1.8; 
+    max-width: 800px;
+    text-align: center; 
+    padding: 20px;
+    font-weight: 300; 
+    letter-spacing: 0.3px; 
+
+}
+
+.inicio-text br {
+    display: block;
+    content: "";
+    margin: 0.8rem 0; 
+}
+
+.nosotros {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 1400px;
+    margin: 3 auto;
+}
+
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.servicio-item {
+    background: white;
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servicio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.servicio-icono {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.servicio-item h3 {
+    color: #003366;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+
+@media (max-width: 1200px) {
+    .grilla {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .grilla {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .grilla {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+@media (max-width: 1020px) {
+    .location-box {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        width: 90%;
+        margin-top: 20px;
+    }
+    .inicio1 {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .columna1, .columna2 {
+        padding: 1rem;
+    }
+    
+    .inicio-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+    }
+    
+    .iniciologo {
+        width: 90%;
+        max-width: 600px;
+    }
+    
+    .inicio-title2 {
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 767px) {
+    .location-box {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0 auto;
+        width: 95%;
+        margin-top: 20px;
+    }
+    
+    .location-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .location-text {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .inicio1 {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .inicio-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .inicio-title::after {
+        width: 120px;
+    }
+    
+    .inicio-title2 {
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .iniciologo {
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .inicio-title2 {
+        font-size: 1.5rem;
+        padding: 0 15px;
+    }
+    
+    .inicio-text {
+        padding: 0 15px 15px;
+        font-size: 14px;
+    }
+    
+    .servicio-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    .servicio-icono {
+        font-size: 2.2rem;
+    }
+    
+    .servicio-item h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+  
+    
+    .inicio-title {
+        font-size: 1.5rem;
+    }
+    
+    .inicio-title2 {
+        font-size: 1.2rem;
+    }
+    
+    .inicio-text {
+        font-size: 13px;
+    }
+    
+    .nosotros {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .location-icon {
+        font-size: 24px;
+    }
+    
+    .maps-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .inicio1, .inicio2, .servicios {
+        max-width: 1400px;
+    }
+    
+    .iniciologo {
+        width: 900px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

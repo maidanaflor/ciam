@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--main-color) #f0f0f0; 
+    scrollbar-width: thin;  
+    font-family: 'Montserrat', sans-serif; 
+    box-sizing: border-box;  
+}
+
+:root {
+    --main-color: #0959d8;
+    --secondary-color: #2fcdcd;
+    --text-color: #333;
+    --white: #fff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+

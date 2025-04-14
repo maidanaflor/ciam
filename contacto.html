@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/contacto.css">
+
+</head>
+
+<body>
+    
+<section class="contacto">
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contactate con CIAM</h1>
+            <p>Escribinos, nuestros representantes te responderán a la brevedad</p>
+        </div>
+        
+        <form id="ContactForm" class="contact-form" action="https://formsubmit.co/tu-email@eurotaller.com" method="POST">
+            <div class="form-group">
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Nombre">Apellido</label>
+                <input type="text" id="Nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Email">Correo electrónico</label>
+                <input type="email" id="Email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Telefono">Teléfono</label>
+                <input type="tel" id="Telefono" name="telefono" required>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="Mensaje">Mensaje</label>
+                <textarea id="Mensaje" name="mensaje" required></textarea>
+            </div>
+            
+            <input type="hidden" name="_next" value="gracias.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="form-group full-width" style="text-align: center;">
+                <button type="submit" class="submit-btn">Enviar consulta</button>
+            </div>
+        </form>
+    </div>
+    
+    <a href="https://wa.me/5491111111111?text=Hola%20Eurotaller,%20quisiera%20hacer%20una%20consulta" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</section>
+    
+    <script src="js/menu.js"></script>
+</body>
+</html>
