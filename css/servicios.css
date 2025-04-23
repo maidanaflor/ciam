@@ -1,0 +1,133 @@
+.box-servicios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.box-grilla {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.servicio-boton {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.servicio-boton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.servicio-icono {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.servicio-boton h3 {
+    color: #003366;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.servicio-boton.activo {
+    background-color: #007BFF;
+    color: white;
+}
+
+.servicio-boton.activo .servicio-icono,
+.servicio-boton.activo h3 {
+    color: white !important;
+}
+
+.servicio-info-container {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    display: none;
+    width: 100%;
+}
+
+.servicio-info-container.activo {
+    display: block;
+}
+
+.servicio-info {
+    display: none;
+    text-align: left;
+}
+
+.servicio-info.activo {
+    display: block;
+}
+
+.servicio-info p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.servicio-boton.activo {
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.servicio-boton.activo .servicio-icono,
+.servicio-boton.activo h3 {
+    color: white !important;
+}
+
+.servicio-boton {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+    .box-grilla {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .box-grilla {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .servicio-boton {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-grilla {
+        grid-template-columns: 1fr;
+    }
+    
+    .servicio-icono {
+        font-size: 2.2rem;
+    }
+    
+    .servicio-boton h3 {
+        font-size: 1.1rem;
+    }
+    
+    .servicio-info-container {
+        padding: 1.5rem;
+    }
+}
