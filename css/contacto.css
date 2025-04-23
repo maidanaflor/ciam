@@ -1,7 +1,7 @@
 section.contacto {
     background: linear-gradient(rgba(255,255,255,0.6),
                  rgba(255,255,255,0.4)), 
-                url('/pic/taller1.jpg') no-repeat center center fixed;
+                url('../pic/taller1.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
