@@ -9,7 +9,6 @@
     width: 90%;
     max-width: 500px;
     min-height: 100px;
-    margin-top: -90px;
     border: 3px solid white;
     position: absolute;
     top: 80%;
@@ -203,7 +202,7 @@
     text-align: center;
     padding: 0 1rem;
     max-width: 1400px;
-    margin: 3 auto;
+    margin: 0 auto;
 }
 
 .grilla {
@@ -258,7 +257,7 @@
 }
 
 
-@media (max-width: 1020px) {
+@media (max-width: 1024px) {
     .location-box {
         position: relative;
         top: auto;
@@ -402,7 +401,6 @@
         width: 900px;
     }
 }
-
 
 
 

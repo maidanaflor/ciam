@@ -114,10 +114,10 @@
     100% { transform: translateX(-50%); }
 }
 
-/* Pausa la animación al hacer hover */
+/* Pausa la animación al hacer hover
 .marcas-track:hover {
     animation-play-state: paused;
-}
+} */
 
 @media (max-width: 768px) {
     .marca-slide {
