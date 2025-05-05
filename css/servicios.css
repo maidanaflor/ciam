@@ -52,7 +52,7 @@
 
 .servicio-boton.activo .servicio-icono,
 .servicio-boton.activo h3 {
-    color: white !important;
+    color: white;
 }
 
 .servicio-icono {
@@ -61,28 +61,59 @@
     margin-bottom: 1.5rem;
 }
 
+/* Estilos para servicio-info (móvil) */
 .servicio-info {
-    display: none;
     padding: 1.5rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 0 0 20px 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     margin-top: -10px;
     text-align: left;
-    transition: all 0.3s ease;
-    transform-origin: top;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: none;
 }
+
+.servicio-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Asignación de imágenes para móvil */
+#electricidad::before { background-image: url('../pic/electricidad.jpg'); }
+#carroceria::before { background-image: url('../pic/carroceria.jpg'); }
+#servicio\ rapido::before { background-image: url('../pic/serviciorapido.jpg'); }
+#electronica::before { background-image: url('../pic/electronica.jpg'); }
+#diagnostico::before { background-image: url('../pic/diagnostico.jpg'); }
+#frenos::before { background-image: url('../pic/frenos.jpg'); }
+#neumatica::before { background-image: url('../pic/neumatica.jpg'); }
+#mecanica::before { background-image: url('../pic/mecanica.jpg'); }
+#aire\ acondicionado::before { background-image: url('../pic/aireacondicionado.jpg'); }
+#parabrisas::before { background-image: url('../pic/parabrisas.jpg'); }
+#cambios\ automaticos::before { background-image: url('../pic/cambiosautomaticos.jpg'); }
+#mantenimiento::before { background-image: url('../pic/mantenimiento.jpg'); }
 
 .servicio-info p {
     font-size: 1.4rem;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 .servicio-info.activo {
     display: block;
+    animation: fadeIn 0.4s ease-out;
 }
 
+/* Estilos para servicio-global-info (desktop) */
 .servicio-global-info {
     font-size: 1.5rem;
     line-height: 1.6;
@@ -91,13 +122,45 @@
     padding: 2rem;
     margin-top: 1rem;
     text-align: left;
-  }
-  
-  .servicio-global-info.activo {
-    display: block;
-  }
-  
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
 
+.servicio-global-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Asignación de imágenes para desktop (deben coincidir con las de móvil) */
+.servicio-global-info[data-active-service="electricidad"]::before { background-image: url('../pic/electricidad.jpg'); }
+.servicio-global-info[data-active-service="carroceria"]::before { background-image:  url('../pic/carroceria.jpg'); }
+.servicio-global-info[data-active-service="servicio rapido"]::before { background-image: url('../pic/serviciorapido.jpg'); }
+.servicio-global-info[data-active-service="electronica"]::before { background-image: url('../pic/electronica.jpg'); }
+.servicio-global-info[data-active-service="diagnostico"]::before { background-image: url('../pic/diagnostico.jpg'); }
+.servicio-global-info[data-active-service="frenos"]::before { background-image: url('../pic/frenos.jpg'); }
+.servicio-global-info[data-active-service="neumatica"]::before { background-image: url('../pic/neumatica.jpg'); }
+.servicio-global-info[data-active-service="mecanica"]::before { background-image: url('../pic/mecanica.jpg'); }
+.servicio-global-info[data-active-service="aire acondicionado"]::before { background-image: url('../pic/aireacondicionado.jpg'); }
+.servicio-global-info[data-active-service="parabrisas"]::before { background-image: url('../pic/parabrisas.jpg'); }
+.servicio-global-info[data-active-service="cambios automaticos"]::before { background-image: url('../pic/cambiosautomaticos.jpg'); }
+.servicio-global-info[data-active-service="mantenimiento"]::before { background-image: url('../pic/mantenimiento.jpg'); }
+
+.servicio-global-info.activo {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Media Queries */
 @media (max-width: 1200px) {
     .box-grilla {
         grid-template-columns: repeat(3, 1fr);
@@ -119,30 +182,13 @@
         margin-bottom: 0;
     }
     
-    .servicio-info {
-        display: none;
-        padding: 1.5rem;
-        background: white;
-        border-radius: 0 0 20px 20px;
-        margin-top: -10px;
-        margin-bottom: 2rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .servicio-info.activo {
-        display: block;
-        width: calc(100% - 2rem); /* Mismo ancho que los botones */
-        margin: 0 auto 1rem;
-        padding: 1.5rem;
-        background: white;
-        border-radius: 0 0 20px 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
     .servicio-boton.activo {
         border-radius: 20px 20px 0 0;
         margin-bottom: 0;
-        
+    }
+    
+    .servicio-global-info {
+        display: none !important;
     }
 }
 
@@ -168,18 +214,13 @@
     }
 }
 
-@media (max-width: 768px) {
-    .servicio-global-info {
-      display: none !important;
-    }
-    
-    .servicio-info.activo {
-      display: block;
-    }
-  }
-  
-  @media (min-width: 769px) {
+@media (min-width: 769px) {
     .servicio-info {
-      display: none !important;
+        display: none !important;
     }
-  }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

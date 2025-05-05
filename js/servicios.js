@@ -1,68 +1,66 @@
-// Agrega este script al final de tu body
 document.addEventListener('DOMContentLoaded', function() {
-    const botones = document.querySelectorAll('.servicio-boton');
-    const globalInfo = document.getElementById('servicio-global-info');
+  const botones = document.querySelectorAll('.servicio-boton');
+  const globalInfo = document.getElementById('servicio-global-info');
+  
+  function manejarClick(event) {
+    const boton = event.currentTarget;
+    const targetId = boton.getAttribute('data-target');
+    const info = document.getElementById(targetId);
+    const esMobile = window.innerWidth <= 768;
     
-    function manejarClick(event) {
-      const boton = event.currentTarget;
-      const targetId = boton.getAttribute('data-target');
-      const info = document.getElementById(targetId);
-      
-      // Remover activo de todos los botones
-      botones.forEach(btn => {
-        btn.classList.remove('activo');
-      });
-      
-      // Agregar activo al botón clickeado
-      boton.classList.add('activo');
-      
-      // Comportamiento diferente según tamaño de pantalla
-      if (window.innerWidth <= 768) {
-        // Pantallas pequeñas: mostrar debajo del item
-        
-        // Ocultar todos los contenidos primero
-        document.querySelectorAll('.servicio-info').forEach(el => {
-          el.classList.remove('activo');
-        });
-        
-        // Mostrar el contenido correspondiente
-        info.classList.add('activo');
-        
-        // Ocultar el global si está visible
-        globalInfo.classList.remove('activo');
-      } else {
-        // Pantallas grandes: mostrar en el área global
-        
-        // Copiar contenido al área global
-        globalInfo.innerHTML = info.innerHTML;
-        globalInfo.classList.add('activo');
-        
-        // Asegurarse que los contenidos individuales estén ocultos
-        document.querySelectorAll('.servicio-info').forEach(el => {
-          el.classList.remove('activo');
-        });
-      }
+    // Verificar si el botón ya está activo (segundo click en móvil)
+    if (boton.classList.contains('activo') && esMobile) {
+      boton.classList.remove('activo');
+      info.classList.remove('activo');
+      return;
     }
     
-    // Agregar event listeners
-    botones.forEach(boton => {
-      boton.addEventListener('click', manejarClick);
+    // Desactivar todos los botones
+    botones.forEach(btn => {
+      btn.classList.remove('activo');
     });
     
-    // Manejar cambios de tamaño de pantalla
-    window.addEventListener('resize', function() {
-      const botonActivo = document.querySelector('.servicio-boton.activo');
-      if (botonActivo) {
-        // Simular click en el botón activo para reajustar la visualización
-        botonActivo.click();
-      }
-    });
+    // Activar el botón clickeado
+    boton.classList.add('activo');
     
-    // Activar el primer item por defecto en pantallas grandes
-    if (window.innerWidth > 768) {
-      const primerBoton = document.querySelector('.servicio-boton');
-      if (primerBoton) {
-        primerBoton.click();
-      }
+    if (esMobile) {
+      // Versión móvil
+      document.querySelectorAll('.servicio-info').forEach(el => {
+        el.classList.remove('activo');
+      });
+      info.classList.add('activo');
+      globalInfo.classList.remove('activo');
+    } else {
+      // Versión desktop
+      globalInfo.innerHTML = info.innerHTML;
+      globalInfo.setAttribute('data-active-service', targetId); // Actualizar el atributo para el fondo
+      globalInfo.classList.add('activo');
+      
+      // Ocultar todos los servicio-info en desktop
+      document.querySelectorAll('.servicio-info').forEach(el => {
+        el.classList.remove('activo');
+      });
+    }
+  }
+  
+  // Agregar event listeners a los botones
+  botones.forEach(boton => {
+    boton.addEventListener('click', manejarClick);
+  });
+  
+  // Manejar redimensionamiento de pantalla
+  window.addEventListener('resize', function() {
+    const botonActivo = document.querySelector('.servicio-boton.activo');
+    if (botonActivo) {
+      botonActivo.click(); // Simular click para reajustar la visualización
     }
   });
+  
+  // Inicializar el primer botón como activo en desktop
+  if (window.innerWidth > 768) {
+    const primerBoton = document.querySelector('.servicio-boton');
+    if (primerBoton) {
+      primerBoton.click();
+    }
+  }
+});
