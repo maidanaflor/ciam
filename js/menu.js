@@ -4,10 +4,10 @@ function loadMenu() {
     const headerHTML = `
         <header>
             <div class="whatsapp-bar">
-                <a href="https://wa.me/TUNUMERODETELEFONO" class="whatsapp-link" target="_blank" aria-label="Contactar por WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                    <span class="whatsapp-text">Contacto</span>
-                </a>
+                <a href="https://wa.me/5491125741070?text=%20%C2%A1Hola!%20Me%20comunico%20para%20consultar%20por%20los%20servicios%20del%20taller%20y%20disponibilidad%20de%20turnos.%20Gracias." class="whatsapp-link" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span class="whatsapp-text">Contacto</span>
+            </a>  
                 <a href="https://eurotaller.com.ar/" class="euro" aria-label="Visitar EuroTaller">
                     <img src="pic/eurotaller.jpeg" alt="Logo EuroTaller" class="euro-logo" loading="lazy">
                 </a>
@@ -42,7 +42,11 @@ function loadMenu() {
                     
                     <div class="social-media">
                         <ul>
-                            <li><a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></li>
+                            <li>
+                            <a href="https://wa.me/5491125741070?text=%20%C2%A1Hola!%20Me%20comunico%20para%20consultar%20por%20los%20servicios%20del%20taller%20y%20disponibilidad%20de%20turnos.%20Gracias." target="_blank" title="Enviar mensaje por WhatsApp">
+                              <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                          </li> 
                             <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                             <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
                         </ul>
@@ -63,18 +67,20 @@ function loadMenu() {
                 <div class="footer-widht contact">
                     <h2>Contacto</h2>
                     <ul class="contact-list">
-                        <li>
-                            <span><i class="bi bi-geo-alt"></i></span>
-                            <p>Av. Remedios de Escalada 1070, Buenos Aires</p>
-                        </li>
-                        <li>
-                            <span><i class="bi bi-envelope-at"></i></span>
-                            <p>contacto@ciam.com.ar</p>
-                        </li>
-                        <li>
-                            <span><i class="bi bi-whatsapp"></i></span>
-                            <p>11-12345678</p>
-                        </li>
+                        <ul class="contact-list">
+                    <li>
+                        <span><i class="bi bi-geo-alt"></i></span>
+                        <p>Av. Remedios de Escalada 1070, Buenos Aires</p>
+                    </li>
+                    <li>
+                        <span><i class="bi bi-envelope-at"></i></span>
+                        <p>m.rubino@centrointegral.com.ar</p>
+                    </li>
+                    <li>
+                        <span><i class="bi bi-whatsapp"></i></span>
+                        <p>+549 - 1125741070</p>
+                    </li>
+                </ul>
                     </ul>
                 </div>
             </div>
